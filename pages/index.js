@@ -122,7 +122,7 @@ export default class Index extends React.Component {
           )) || (
           <div>
             <center>
-              <Image src="/static/vault.jpg" size="medium" />
+              <Image src="/static/goat.png" size="medium" />
               <h1>
                 Olá, caro Vault Dweller! <br /> Seja bem-vindo ao G.O.A.T. do
                 Vault 130.
@@ -139,7 +139,12 @@ export default class Index extends React.Component {
               <a
                 href={`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${SITE_URL}/callback&response_type=code&scope=identify%20guilds`}
               >
-                <Button color="green" inverted size="massive">
+                <Button
+                  color="green"
+                  className="loginBtn"
+                  inverted
+                  size="massive"
+                >
                   Entrar com o Discord
                 </Button>
               </a>
@@ -148,29 +153,40 @@ export default class Index extends React.Component {
         )}
         <style jsx global>
           {`
-          body {
-            display: flex;
-            background-color: #121212;
-            justify-content: center;
-            color: #1bff80;
-            font-family: 'Roboto', sans-serif;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-          }
-          .container {
-            padding: 10px;
-          }
-          .login {
-            display: flex; /* establish flex container */
-            flex-direction: column; /* make main axis vertical */
-            justify-content: center; /* center items vertically, in this case */
-            align-items: center; /* center items horizontally, in this case */
-            height: 100vh;
-          }
-          .notMember {
-            display: flex; /* establish flex container */
-            align-items: center; /* center items horizontally, in this case */
-          }
+            body {
+              display: flex;
+              background-color: #121212;
+              justify-content: center;
+              color: #1bff80;
+              font-family: 'Roboto', sans-serif;
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+            }
+            .container {
+              padding: 10px;
+            }
+            .login {
+              display: flex; /* establish flex container */
+              flex-direction: column; /* make main axis vertical */
+              justify-content: center; /* center items vertically, in this case */
+              align-items: center; /* center items horizontally, in this case */
+              height: 100vh;
+            }
+            .notMember {
+              display: flex; /* establish flex container */
+              align-items: center; /* center items horizontally, in this case */
+            }
+            .ui.inverted.green.button {
+              box-shadow: 0 0 0 2px #1bff80 inset !important;
+              color: #1bff80 !important;
+            }
+            .ui.inverted.green.button:hover {
+              color: #fff !important;
+              background-color: #1bff80 !important;
+            }
+            .ui.inverted.green.button:focus {
+              color: #fff !important;
+              background-color: #1bff80 !important;
             }
           `}
         </style>
