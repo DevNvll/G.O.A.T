@@ -132,9 +132,16 @@ export default class Index extends React.Component {
                 você para assim identificarmos a quem você mais oferece apoio na
                 franquia.
               </p>{' '}
+              <p>
+                Se identificando, você também garante sua estadia completa no
+                servidor, perdendo a tag de Vault Trainee e ganhando a de Vault
+                Dweller.
+              </p>
               <p>Você pode escolher quem quiser, e mudar sempre que desejar.</p>{' '}
-              Lembrando que, é essencial que você escolha somente quem você
-              apoia de verdade, e que não abuse das tags.<br />
+              <p>
+                Lembrando que, é essencial que você escolha somente quem você
+                apoia de verdade, e que não abuse das tags.
+              </p>
               <br />
               <a
                 href={`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${SITE_URL}/callback&response_type=code&scope=identify%20guilds`}
