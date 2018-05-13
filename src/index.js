@@ -35,6 +35,7 @@ const TAGS = [
   'Talon Company',
   'Children of the Atom',
   'BoS - Outcasts',
+  'Outcasts',
   'Raider Gangs',
   'Independent Vegas (Yes Man)',
   'Mr. House',
@@ -58,7 +59,13 @@ const TAGS = [
   'Midwest Chapter',
   'Sem Especificação',
   '+18',
-  '-18'
+  '-18',
+  'Brotherhood of Steel (Mojave Chapter)',
+  'Brotherhood of Steel (First Chapter)',
+  "Brotherhood of Steel (Lyon's Pride)",
+  "Brotherhood of Steel (Maxson's Pride)",
+  'Brotherhood of Steel (Midwest Chapter)',
+  'Brotherhood of Steel (Outcasts)'
 ]
 
 client.on('ready', () => {
@@ -71,6 +78,28 @@ function addMembership(member) {
     member.addRole(GUILD.roles.find('name', 'Vault Dweller').id).then(() => {
       member.removeRole(GUILD.roles.find('name', 'Vault Trainee').id)
     })
+}
+
+function toggleRole(member, tag) {
+  const GUILD = client.guilds.find('id', SERVER_ID)
+  if (member.roles.find('name', tag)) {
+    member.removeRole(GUILD.roles.find('name', tag).id).then(() => {
+      if (
+        !(
+          member.roles.find('name', "Lyon's Pride") ||
+          member.roles.find('name', "Maxson's Pride") ||
+          member.roles.find('name', 'Midwest Chapter') ||
+          member.roles.find('name', 'First Chapter') ||
+          member.roles.find('name', 'Mojave Chapter') ||
+          member.roles.find('name', 'Outcasts')
+        )
+      )
+        member.removeRole(GUILD.roles.find('name', 'Brotherhood of Steel').id)
+    })
+  } else {
+    member.addRole(GUILD.roles.find('name', 'Brotherhood of Steel').id)
+    member.addRole(GUILD.roles.find('name', tag).id)
+  }
 }
 
 function handleTags(member, tag) {
@@ -101,6 +130,30 @@ function handleTags(member, tag) {
     }
     if (member.roles.find('name', 'Sem Especificação')) {
       member.removeRole(GUILD.roles.find('name', 'Sem Especificação').id)
+    }
+    if (tag === 'Brotherhood of Steel (First Chapter)') {
+      toggleRole(member, 'First Chapter')
+      return
+    }
+    if (tag === "Brotherhood of Steel (Lyon's Pride)") {
+      toggleRole(member, "Lyon's Pride")
+      return
+    }
+    if (tag === 'Brotherhood of Steel (Mojave Chapter)') {
+      toggleRole(member, 'Mojave Chapter')
+      return
+    }
+    if (tag === "Brotherhood of Steel (Maxson's Pride)") {
+      toggleRole(member, "Maxson's Pride")
+      return
+    }
+    if (tag === 'Brotherhood of Steel (Midwest Chapter)') {
+      toggleRole(member, 'Midwest Chapter')
+      return
+    }
+    if (tag === 'Brotherhood of Steel (Outcasts)') {
+      toggleRole(member, 'Outcasts')
+      return
     }
     if (member.roles.find('name', tag)) {
       member.removeRole(GUILD.roles.find('name', tag).id)
@@ -199,6 +252,48 @@ nextApp.prepare().then(() => {
       }).then(({ data }) => {
         let tags = []
         for (let tag of data.roles) {
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            'Mojave Chapter'
+          ) {
+            tags.push('Brotherhood of Steel (Mojave Chapter)')
+            continue
+          }
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            'First Chapter'
+          ) {
+            tags.push('Brotherhood of Steel (First Chapter)')
+            continue
+          }
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            "Lyon's Pride"
+          ) {
+            tags.push("Brotherhood of Steel (Lyon's Pride)")
+            continue
+          }
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            "Maxson's Pride"
+          ) {
+            tags.push("Brotherhood of Steel (Maxson's Pride)")
+            continue
+          }
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            'Midwest Chapter'
+          ) {
+            tags.push('Brotherhood of Steel (Midwest Chapter)')
+            continue
+          }
+          if (
+            client.guilds.find('id', SERVER_ID).roles.find('id', tag).name ===
+            'Outcasts'
+          ) {
+            tags.push('Brotherhood of Steel (Outcasts)')
+            continue
+          }
           tags.push(
             client.guilds.find('id', SERVER_ID).roles.find('id', tag).name
           )

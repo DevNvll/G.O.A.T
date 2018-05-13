@@ -6,17 +6,24 @@ export function setToken(token, refresh) {
 }
 
 export function refreshToken() {
-  axios({
-    method: 'POST',
-    url: `/refresh`,
-    data: {
-      refresh_token: localStorage.getItem('refresh')
-    }
-  })
-    .then(({ data }) => {
-      setToken(data.access_token, data.refresh_token)
+  if (!localStorage.getItem('refresh')) return
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'POST',
+      url: `/refresh`,
+      data: {
+        refresh_token: localStorage.getItem('refresh')
+      }
     })
-    .catch(err => console.log(err))
+      .then(({ data }) => {
+        setToken(data.access_token, data.refresh_token)
+        resolve({
+          access_token: data.access_token,
+          refresh_token: data.refresh_token
+        })
+      })
+      .catch(err => reject(err))
+  })
 }
 
 export function getToken() {

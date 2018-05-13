@@ -1,32 +1,35 @@
 import React from 'react'
-import { Button, Item } from 'semantic-ui-react'
+import { Button, Item, Image } from 'semantic-ui-react'
 
 export default class Profile extends React.Component {
-  constructor() {
-    super()
-  }
-
   render() {
     return (
       <div className="profile">
-        <Item.Group>
-          <Item>
-            <Item.Image size="tiny" circular src={this.props.avatar} />
-            <Item.Content verticalAlign="middle">
-              <Item.Content verticalAlign="middle">
-                <span className="username">{this.props.username}</span>
-                <br />
-                <Button
-                  content="Sair"
-                  icon="right arrow"
-                  labelPosition="right"
-                  size="mini"
-                  onClick={() => this.props.onLogout()}
-                />
-              </Item.Content>
-            </Item.Content>
-          </Item>
-        </Item.Group>
+        <Image
+          size="tiny"
+          src={this.props.avatar}
+          avatar
+          floated="left"
+          verticalAlign="top"
+        />
+        <React.Fragment>
+          <span className="username">
+            {this.props.username}
+            <br />
+            <Button
+              style={{ marginTop: '10px' }}
+              content="Sair"
+              icon="right arrow"
+              labelPosition="right"
+              size="mini"
+              compact
+              primary
+              negative
+              onClick={() => this.props.onLogout()}
+            />
+          </span>
+        </React.Fragment>
+
         <style jsx>{`
           .profile {
             display: -ms-flexbox;
@@ -37,11 +40,17 @@ export default class Profile extends React.Component {
             -webkit-box-align: center;
             align-items: center;
             justify-content: center;
-            padding-top: 50px;
+            padding-top: 10px;
           }
           .profile .username {
             font-weight: bold;
-            font-size: 1.8em;
+            font-size: 1.6em;
+            margin-top: -10px;
+          }
+          @media only screen and (max-width: 600px) {
+            .logoutBtn {
+              text-align: center;
+            }
           }
         `}</style>
       </div>

@@ -33,6 +33,7 @@ const TAGS = [
   "Reilly's Rangers",
   'Talon Company',
   'Children of the Atom',
+  'Kings',
   'BoS - Outcasts',
   'Raider Gangs',
   'Independent Vegas (Yes Man)',
@@ -51,13 +52,20 @@ const TAGS = [
   'Institute',
   "Maxson's Pride",
   'Atom Cats',
+  'Outcasts',
   'Children of the Atom',
   'Raider Gangs',
   'Midwest Chapter',
   'Sem Especificação',
   'Sem Especificação',
   '+18',
-  '-18'
+  '-18',
+  'Brotherhood of Steel (First Chapter)',
+  "Brotherhood of Steel (Lyon's Pride)",
+  'Brotherhood of Steel (Mojave Chapter)',
+  "Brotherhood of Steel (Maxson's Pride)",
+  'Brotherhood of Steel (Midwest Chapter)',
+  'Brotherhood of Steel (Outcasts)'
 ]
 
 const TagCategories = {
@@ -65,7 +73,7 @@ const TagCategories = {
     'Blades',
     'Regulators (FO1)',
     'Unity',
-    'Brotherhood of Steel',
+    'Brotherhood of Steel (First Chapter)',
     'Followers of the Apocalypse',
     'Raider Gangs'
   ],
@@ -78,13 +86,13 @@ const TagCategories = {
   ],
   'Fallout 3': [
     'Enclave',
-    "Lyon's Pride",
+    "Brotherhood of Steel (Lyon's Pride)",
     'Regulators (FO3)',
     'Tunnel Snakes',
     "Reilly's Rangers",
     'Talon Company',
     'Children of the Atom',
-    'BoS - Outcasts',
+    'Brotherhood of Steel (Outcasts)',
     'Raider Gangs'
   ],
   'Fallout: New Vegas': [
@@ -96,7 +104,7 @@ const TagCategories = {
     'Kings',
     'Great Khans',
     'Boomers',
-    'Brotherhood of Steel',
+    'Brotherhood of Steel (Mojave Chapter)',
     'Raider Gangs',
     'Sorrows',
     'Twisted Hairs'
@@ -105,12 +113,12 @@ const TagCategories = {
     'Railroad',
     'Minutemen',
     'Institute',
-    "Maxson's Pride",
+    "Brotherhood of Steel (Maxson's Pride)",
     'Atom Cats',
     'Children of the Atom',
     'Raider Gangs'
   ],
-  'Fallout Tactics': ['Midwest Chapter']
+  'Fallout Tactics': ['Brotherhood of Steel (Midwest Chapter)']
 }
 
 export default class TagsForm extends React.Component {
@@ -189,13 +197,25 @@ export default class TagsForm extends React.Component {
     return (
       <React.Fragment>
         <Form onSubmit={this.handleSubmit.bind(this)}>
-          <Segment style={{ margin: '50px' }} loading={this.state.loading}>
+          <Segment
+            style={{ margin: '50px' }}
+            loading={this.state.loading}
+            raised
+            inverted
+          >
             <Form.Group unstackable>
               {Object.keys(TagCategories).map(game => {
                 return (
-                  <div style={{ paddingRight: '10px' }} key={game}>
+                  <div
+                    style={{
+                      paddingRight: '10px',
+                      paddingBottom: '10px',
+                      color: '#1bff80'
+                    }}
+                    key={game}
+                  >
                     <Form.Field>
-                      <label>{game}</label>
+                      <label style={{ color: '#1bff80' }}>{game}</label>
                       {TagCategories[game].map(tag => {
                         return (
                           <Form.Field
@@ -223,9 +243,13 @@ export default class TagsForm extends React.Component {
               />
             </div>
           </Segment>
-          <Segment style={{ margin: '50px' }} loading={this.state.loading}>
+          <Segment
+            style={{ margin: '50px' }}
+            inverted
+            loading={this.state.loading}
+          >
             <Form.Field>
-              <label>Idade</label>
+              <label style={{ color: '#1bff80' }}>Idade</label>
               <Form.Field
                 control={Radio}
                 label="-18"
@@ -245,6 +269,11 @@ export default class TagsForm extends React.Component {
             </Form.Field>
           </Segment>
         </Form>
+        <style jsx global>{`
+          .field label {
+            color: #1bff80 !important;
+          }
+        `}</style>
       </React.Fragment>
     )
   }

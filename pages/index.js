@@ -9,7 +9,8 @@ import {
   Loader,
   Segment,
   Dimmer,
-  Transition
+  Transition,
+  Container
 } from 'semantic-ui-react'
 import {
   refreshToken,
@@ -22,6 +23,11 @@ import {
 
 import Profile from '../components/Profile'
 import Form from '../components/FormVault'
+
+const SITE_URL = process.env.NOW_URL
+  ? process.env.SITE_URL
+  : 'http://localhost:3000'
+const CLIENT_ID = process.env.CLIENT_ID
 
 function getUrlParams(search) {
   let hashes = search.slice(search.indexOf('?') + 1).split('&')
@@ -37,19 +43,12 @@ export default class Index extends React.Component {
     this.state = {
       loggedin: false,
       member: false,
-      loading: true,
-      url: ''
+      loading: true
     }
   }
 
   componentDidMount() {
     document.title = 'Vault130: G.O.A.T'
-    const authurl = process.env.NOW_URL
-      ? 'https://discordapp.com/api/oauth2/authorize?client_id=439233107976257572&redirect_uri=https://vault130.now.sh/callback' +
-        '&response_type=code&scope=identify%20guilds'
-      : 'https://discordapp.com/api/oauth2/authorize?client_id=439233107976257572&redirect_uri=http://localhost:3000/callback' +
-        '&response_type=code&scope=identify%20guilds'
-    this.setState({ url: authurl })
     const { code, refresh } = getUrlParams(window.location.search)
     const token = getToken()
     if (code && refresh) {
@@ -60,7 +59,9 @@ export default class Index extends React.Component {
       history.replaceState({}, 'Vault130: G.O.A.T - Tags', '/')
     } else if (token) {
       this.setState({ loggedin: true })
-      this.loadInfo()
+      refreshToken().then(data => {
+        this.loadInfo()
+      })
     } else {
       this.setState({ loading: false })
     }
@@ -97,13 +98,11 @@ export default class Index extends React.Component {
         </Dimmer>
       )
     }
-    if (process.env.NOW_URL) {
-    }
     return (
-      <div>
+      <Container>
         {(this.state.loggedin &&
           this.state.user && (
-            <div>
+            <React.Fragment>
               <Profile
                 avatar={`https://cdn.discordapp.com/avatars/${
                   this.state.user.id
@@ -119,49 +118,63 @@ export default class Index extends React.Component {
                   pendente={this.state.isPending}
                 />
               )) || <h1>Você não é membro do servidor</h1>}
-            </div>
+            </React.Fragment>
           )) || (
-          <div className="login">
+          <div>
             <center>
-              <h1>Vault130 - G.O.A.T</h1>
+              <Image src="/static/vault.jpg" size="medium" />
+              <h1>
+                Olá, caro Vault Dweller! <br /> Seja bem-vindo ao G.O.A.T. do
+                Vault 130.
+              </h1>
+              <p>
+                Aqui você escolherá as tags de facções que serão aplicadas a
+                você para assim identificarmos a quem você mais oferece apoio na
+                franquia.
+              </p>{' '}
+              <p>Você pode escolher quem quiser, e mudar sempre que desejar.</p>{' '}
+              Lembrando que, é essencial que você escolha somente quem você
+              apoia de verdade, e que não abuse das tags.<br />
+              <br />
+              <a
+                href={`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${SITE_URL}/callback&response_type=code&scope=identify%20guilds`}
+              >
+                <Button color="green" inverted size="massive">
+                  Entrar com o Discord
+                </Button>
+              </a>
             </center>
-            <a href={this.state.url}>
-              <Button color="blue" size="massive">
-                Entrar com o Discord
-              </Button>
-            </a>
           </div>
         )}
         <style jsx global>
           {`
-            html {
-              height: 100%;
-            }
-            * {
-              box-sizing: border-box;
-            }
-
-            body {
-              display: flex;
-              background-color: #f2f2f2;
-              justify-content: center;
-              font-family: 'Roboto', sans-serif;
-
-              height: 100%;
-
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-            }
-            .login {
-              display: flex; /* establish flex container */
-              flex-direction: column; /* make main axis vertical */
-              justify-content: center; /* center items vertically, in this case */
-              align-items: center; /* center items horizontally, in this case */
-              height: 100vh;
+          body {
+            display: flex;
+            background-color: #121212;
+            justify-content: center;
+            color: #1bff80;
+            font-family: 'Roboto', sans-serif;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+          .container {
+            padding: 10px;
+          }
+          .login {
+            display: flex; /* establish flex container */
+            flex-direction: column; /* make main axis vertical */
+            justify-content: center; /* center items vertically, in this case */
+            align-items: center; /* center items horizontally, in this case */
+            height: 100vh;
+          }
+          .notMember {
+            display: flex; /* establish flex container */
+            align-items: center; /* center items horizontally, in this case */
+          }
             }
           `}
         </style>
-      </div>
+      </Container>
     )
   }
 }
