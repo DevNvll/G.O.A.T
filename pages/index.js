@@ -153,6 +153,10 @@ export default class Index extends React.Component {
         )}
         <style jsx global>
           {`
+            @font-face {
+              font-family: pipboy;
+              src: url(./static/monofonto.ttf);
+            }
             body {
               display: flex;
               background-color: #121212;
@@ -161,6 +165,10 @@ export default class Index extends React.Component {
               font-family: 'Roboto', sans-serif;
               background-repeat: no-repeat;
               background-attachment: fixed;
+              font-family: pipboy;
+            }
+            h1 {
+              font-family: pipboy;
             }
             .container {
               padding: 10px;
@@ -179,6 +187,7 @@ export default class Index extends React.Component {
             .ui.inverted.green.button {
               box-shadow: 0 0 0 2px #1bff80 inset !important;
               color: #1bff80 !important;
+              font-family: pipboy;
             }
             .ui.inverted.green.button:hover {
               color: #fff !important;
