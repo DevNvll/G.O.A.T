@@ -48,7 +48,7 @@ export default class Index extends React.Component {
   }
 
   componentDidMount() {
-    document.title = 'Vault130: G.O.A.T'
+    document.title = 'Vault 130 - G.O.A.T.: Sistema de Tags Automatizadas'
     const { code, refresh } = getUrlParams(window.location.search)
     const token = getToken()
     if (code && refresh) {
@@ -56,7 +56,11 @@ export default class Index extends React.Component {
       localStorage.setItem('refresh', refresh)
       this.setState({ loggedin: true })
       this.loadInfo()
-      history.replaceState({}, 'Vault130: G.O.A.T - Tags', '/')
+      history.replaceState(
+        {},
+        'Vault 130 - G.O.A.T.: Sistema de Tags Automatizadas - Tags',
+        '/'
+      )
     } else if (token) {
       this.setState({ loggedin: true })
       refreshToken().then(data => {
@@ -71,7 +75,10 @@ export default class Index extends React.Component {
       .then(({ data }) => {
         this.setState({ user: data })
         document.title =
-          'Vault130: G.O.A.T - ' + data.username + '#' + data.discriminator
+          'Vault 130 - G.O.A.T.: Sistema de Tags Automatizadas - ' +
+          data.username +
+          '#' +
+          data.discriminator
         checkMembership().then(result => {
           if (result) {
             this.setState({ member: true })
@@ -86,7 +93,8 @@ export default class Index extends React.Component {
   onLogout() {
     logout()
     this.setState({ loggedin: false })
-    document.title = 'Vault130: G.O.A.T - Tags'
+    document.title =
+      'Vault 130 - G.O.A.T.: Sistema de Tags Automatizadas - Tags'
   }
   render() {
     if (this.state.loading) {

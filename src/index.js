@@ -65,7 +65,8 @@ const TAGS = [
   "Brotherhood of Steel (Lyon's Pride)",
   "Brotherhood of Steel (Maxson's Pride)",
   'Brotherhood of Steel (Midwest Chapter)',
-  'Brotherhood of Steel (Outcasts)'
+  'Brotherhood of Steel (Outcasts)',
+  'NoAge'
 ]
 
 client.on('ready', () => {
@@ -112,6 +113,14 @@ function handleTags(member, tag) {
         member.removeRole(GUILD.roles.find('name', tag.name).id)
       }
       member.addRole(GUILD.roles.find('name', 'Sem Especificação').id)
+      return
+    }
+    if (tag === 'NoAge') {
+      if (member.roles.find('name', '-18')) {
+        member.removeRole(GUILD.roles.find('name', '-18').id)
+      } else if (member.roles.find('name', '+18')) {
+        member.removeRole(GUILD.roles.find('name', '+18').id)
+      }
       return
     }
     if (tag === '+18' || tag === '-18') {

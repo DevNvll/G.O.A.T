@@ -182,6 +182,10 @@ export default class TagsForm extends React.Component {
       this.setState({
         tags: [...this.state.tags.filter(i => i !== '-18'), '+18']
       })
+    } else if (value === 'NoAge') {
+      this.setState({
+        tags: [...this.state.tags.filter(i => i !== '+18' && i !== '-18')]
+      })
     } else {
       this.setState({
         tags: [...this.state.tags.filter(i => i !== '+18'), '-18']
@@ -264,6 +268,17 @@ export default class TagsForm extends React.Component {
                 value="+18"
                 name="idade"
                 checked={this.state.tags.includes('+18')}
+                onChange={this.handleAge.bind(this)}
+              />
+              <Form.Field
+                control={Radio}
+                label="Prefiro não responder"
+                value="NoAge"
+                name="idade"
+                checked={
+                  !this.state.tags.includes('+18') &&
+                  !this.state.tags.includes('-18')
+                }
                 onChange={this.handleAge.bind(this)}
               />
             </Form.Field>
