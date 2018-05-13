@@ -6,5 +6,5 @@ O fluxo de funcionamento do G.O.A.T consiste em o usuário logar com a conta do 
 
 Desenvolvido com NextJS (React renderizado no servidor) + Express + Discord.js.
 
-![Screenshot 1](https://i.imgur.com/NBkc1AM.png)
-![Screenshot 2](https://i.imgur.com/xBJ7jXF.png)
+![Screenshot 1](https://i.imgur.com/8Ko7etO.png)
+![Screenshot 2](https://i.imgur.com/89eIgx0.png)
