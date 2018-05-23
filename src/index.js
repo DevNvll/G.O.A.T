@@ -75,9 +75,9 @@ client.on('ready', () => {
 
 function addMembership(member) {
   const GUILD = client.guilds.find('id', SERVER_ID)
-  if (member.roles.find('name', 'Vault Trainee'))
+  if (member.roles.find('name', 'Wastelander'))
     member.addRole(GUILD.roles.find('name', 'Vault Dweller').id).then(() => {
-      member.removeRole(GUILD.roles.find('name', 'Vault Trainee').id)
+      member.removeRole(GUILD.roles.find('name', 'Wastelander').id)
     })
 }
 

@@ -219,7 +219,9 @@ export default class TagsForm extends React.Component {
                     key={game}
                   >
                     <Form.Field>
-                      <label style={{ color: '#1bff80' }}>{game}</label>
+                      <label style={{ color: '#1bff80' }}>
+                        <b>> {game}</b>
+                      </label>
                       {TagCategories[game].map(tag => {
                         return (
                           <Form.Field
@@ -253,7 +255,7 @@ export default class TagsForm extends React.Component {
             loading={this.state.loading}
           >
             <Form.Field>
-              <label style={{ color: '#1bff80' }}>Idade</label>
+              <label style={{ color: '#1bff80' }}>> Idade</label>
               <Form.Field
                 control={Radio}
                 label="-18"
@@ -287,6 +289,9 @@ export default class TagsForm extends React.Component {
         <style jsx global>{`
           .field label {
             color: #1bff80 !important;
+          }
+          .segment {
+            padding: 20px !important;
           }
         `}</style>
       </React.Fragment>

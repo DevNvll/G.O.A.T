@@ -142,7 +142,7 @@ export default class Index extends React.Component {
               </p>{' '}
               <p>
                 Se identificando, você também garante sua estadia completa no
-                servidor, perdendo a tag de Vault Trainee e ganhando a de Vault
+                servidor, perdendo a tag de Wastelander e ganhando a de Vault
                 Dweller.
               </p>
               <p>Você pode escolher quem quiser, e mudar sempre que desejar.</p>{' '}
@@ -172,6 +172,10 @@ export default class Index extends React.Component {
               font-family: pipboy;
               src: url(./static/monofonto.ttf);
             }
+            ::selection,
+            ::-moz-selection {
+              background-color: #0bff80 !important;
+            }
             body {
               display: flex;
               background-color: #121212;
@@ -199,18 +203,16 @@ export default class Index extends React.Component {
               display: flex; /* establish flex container */
               align-items: center; /* center items horizontally, in this case */
             }
-            .ui.inverted.green.button {
+            .ui.inverted.green.button,
+            .ui.inverted.green.buttons .button {
+              background-color: transparent;
               box-shadow: 0 0 0 2px #1bff80 inset !important;
-              color: #1bff80 !important;
+              color: #1bff80;
               font-family: pipboy;
             }
-            .ui.inverted.green.button:hover {
-              color: #fff !important;
-              background-color: #1bff80 !important;
-            }
-            .ui.inverted.green.button:focus {
-              color: #fff !important;
-              background-color: #1bff80 !important;
+            .ui.inverted.green.button:hover,
+            .ui.inverted.green.buttons .button:hover {
+              background-color: #1bff80;
             }
           `}
         </style>

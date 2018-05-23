@@ -7,7 +7,8 @@
     "dev": "backpack dev",
     "build": "next build && backpack build",
     "start": "NODE_ENV=production node build/main.js",
-    "deploy": "now --public && now alias"
+    "deploy":
+      "now scale vault130.now.sh 0 && ping 127.0.0.1 -n 11 > nul && now --public && now alias rm vault130.now.sh --yes && now alias && now scale vault130.now.sh sfo1 1"
   },
   "keywords": [],
   "author": "Henrick Mello",
@@ -19,7 +20,7 @@
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "next": "^5.0.0",
+    "next": "^6.0.2",
     "qs": "^6.5.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

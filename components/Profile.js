@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Item, Image } from 'semantic-ui-react'
+import { Button, Item, Image, Icon } from 'semantic-ui-react'
 
 export default class Profile extends React.Component {
   render() {
@@ -7,8 +7,8 @@ export default class Profile extends React.Component {
       <div className="profile">
         <Image
           size="tiny"
+          rounded
           src={this.props.avatar}
-          avatar
           floated="left"
           verticalAlign="top"
         />
@@ -17,16 +17,17 @@ export default class Profile extends React.Component {
             {this.props.username}
             <br />
             <Button
-              style={{ marginTop: '10px' }}
-              content="Sair"
-              icon="right arrow"
-              labelPosition="right"
+              animated
               size="mini"
-              compact
-              primary
-              negative
+              color="black"
+              style={{ marginTop: '10px' }}
               onClick={() => this.props.onLogout()}
-            />
+            >
+              <Button.Content visible>Sair</Button.Content>
+              <Button.Content hidden>
+                <Icon name="right arrow" />
+              </Button.Content>
+            </Button>
           </span>
         </React.Fragment>
 
