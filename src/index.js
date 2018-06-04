@@ -75,10 +75,10 @@ client.on('ready', () => {
 
 function addMembership(member) {
   const GUILD = client.guilds.find('id', SERVER_ID)
-  if (member.roles.find('name', 'Wastelander'))
-    member.addRole(GUILD.roles.find('name', 'Vault Dweller').id).then(() => {
-      member.removeRole(GUILD.roles.find('name', 'Wastelander').id)
-    })
+  member.addRole(GUILD.roles.find('name', 'Vault Dweller').id).then(() => {
+    member.removeRole(GUILD.roles.find('name', 'Wastelander').id)
+    member.addRole(GUILD.roles.find('name', 'Vault Renegade [0]').id)
+  })
 }
 
 function toggleRole(member, tag) {
@@ -206,12 +206,11 @@ nextApp.prepare().then(() => {
         res.redirect(
           301,
           process.env.NOW_URL
-            ? 'https://vault130.now.sh' +
-              '/?code=' +
+            ? 'https://vault130.now.sh/goat?code=' +
               access_token +
               '&refresh=' +
               refresh_token
-            : 'http://localhost:3000/?code=' +
+            : 'http://localhost:3000/goat?code=' +
               access_token +
               '&refresh=' +
               refresh_token
@@ -342,7 +341,7 @@ nextApp.prepare().then(() => {
         const member = client.guilds
           .find('id', SERVER_ID)
           .members.find('id', data.id)
-        if (member.roles.find('name', 'Vault Trainee')) addMembership(member)
+        if (member.roles.find('name', 'Wastelander')) addMembership(member)
         handleTags(member, req.body.tag)
         res.send(member)
       })
