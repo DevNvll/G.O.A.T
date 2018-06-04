@@ -11,8 +11,16 @@ class Regras extends React.Component {
     return (
       <div>
         <div>
+          <center>
+            <Image
+              src="static/introducao.png"
+              size="large"
+              style={{ clear: 'both' }}
+            />
+          </center>
           <Image src="static/musico.png" size="small" floated="left" />
-          <h1>Vault 130</h1>
+
+          <br />
           <p>
             Olá, e sejam bem-vindos ao discord oficial do canal Vault 130! Aqui
             é palco para a socialização de tanto inscritos como não-inscritos no
