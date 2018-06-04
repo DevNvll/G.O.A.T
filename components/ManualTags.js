@@ -34,14 +34,15 @@ const ManualTags = ({ next }) => (
     <span style={{ color: '#ffffff' }}>Lore Master</span>: Mestre da história,
     em português. Dada para aqueles que possuem conhecimento profundo sobre a
     franquia e tudo que nela representa, além de serem capazes de debater e
-    explicar aos demais usuários tudo que nela há.
+    explicar aos demais usuários tudo que nela há.<br />
     <span style={{ color: '#5e08cc' }}>Vault Hero</span>: Membro exemplar do
     servidor. Dada para aqueles que conseguem alcançar três tags de
-    reconhecimento de comportamento.
+    reconhecimento de comportamento.<br />
     <span>Tags de facções</span>: Usuários que apoiam determinadas facções e
-    defendem as suas missões/ideias.
+    defendem as suas missões/ideias.<br />
     <span>Sem Especificação:</span> Usuários aos quais não apoiam as ideias de
     nenhuma facção em particular.
+    <br />
     <br />
     <Button
       color="green"

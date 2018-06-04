@@ -11,8 +11,6 @@ const ManualNetwork = ({ next }) => (
     <span style={{ color: 'grey' }}>#fallout:</span> Sala de conversação <br />
     <span style={{ color: 'grey' }}>#anúncios:</span> Anuncios feitos pela staff
     em relação ao servidor. <br />
-    <span style={{ color: 'grey' }}>#tags:</span> Sala para definirmos as tags
-    dos novos usuários.<br />
     <span style={{ color: 'grey' }}>#divulgação:</span> Divulgação de
     canais/vídeos de Fallout. Para ter seu vídeo divulgado, fale com Músico.{' '}
     <br />
@@ -46,6 +44,20 @@ const ManualNetwork = ({ next }) => (
     tem a ver com o servidor em geral (menos NSFW, poxa). <br />
     <span style={{ color: 'grey' }}>#irl:</span> Um canal de texto para os
     usuários falarem de coisas pessoais de seu dia-a-dia.<br />
+    <span style={{ color: 'grey' }}>#perolas:</span> Canal para exibir as
+    mensagens ilógicas ou hilárias faladas pelos fãs de Fallout.<br />
+    <span style={{ color: 'grey' }}>#evergreen-mills:</span> Canal reservado
+    para os trolls do servidor.<br />
+    <h1>
+      <center>[Canais de voz disponíveis]</center>
+    </h1>
+    <span>L.A. Boneyard</span>
+    <br />
+    <span>Navarro</span>
+    <br />
+    <span>The Strip</span>
+    <br />
+    <br />
     <h1>
       <center>[Comandos para bots]</center>
     </h1>
@@ -59,6 +71,9 @@ const ManualNetwork = ({ next }) => (
     leaderboard do servidor. <br />
     <span style={{ color: 'grey' }}>"!pipboy"</span> Mostra um pequeno texto
     explicativo do mini-game de XP do servidor. <br />
+    <span style={{ color: 'grey' }}>"!karma"</span> Mostra um pequeno texto
+    explicativo sobre o sistema de reputação e participação do servidor. <br />
+    <br />
     <b>Comandos do @Mr. New Vegas (Rythm) </b>
     <br />
     <span style={{ color: 'grey' }}>
@@ -79,6 +94,7 @@ const ManualNetwork = ({ next }) => (
     <span style={{ color: 'grey' }}>"!skip"</span> Pula a música atual.
     Lembrando que o bot faz playlist das músicas, então podem fazer comandos
     atrás de comandos para música que ela tocará todas em excessão. <br />
+    <br />
     <b>Comandos do @Nick Valentine#0997 (NotSoBot) </b>
     <br />
     Bem, são muitos, então aqui vai um site onde mostra todos.{' '}

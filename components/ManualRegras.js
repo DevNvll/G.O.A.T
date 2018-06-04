@@ -27,7 +27,7 @@ const Regras = ({ next }) => (
           vontade, uma lei universal." <small> – Immanuel Kant</small>
         </h1>
       </center>
-      <h3> A moderação NÃO:</h3>
+      <h3>A moderação NÃO</h3>
       -Se importa com sua opinião <br />
       -Vai pegar leve por suas cagadas <br />
       -Se responsabiliza por seus sentimentos <br />
@@ -38,29 +38,28 @@ const Regras = ({ next }) => (
       recomendado <br />
       -Zoeira fora de hora (em momentos de debate, por exemplo) é passivo de
       banimento <br />
-      -Este servidor não se responsabiliza por Desinformação oriunda de seus
-      usuários <br />
-      -Danos causados por seus usuários <br />
-      <h3> É reservado à moderação: </h3>
+      <h3>É reservado à moderação</h3>
       -Arbitragem sobre tags <br />
       -Administração do servidor <br />
       -Deletar mensagens <br />
       -Expulsar usuários do servidor <br />
-      <h3> Chats de texto </h3>
+      -Aplicar punições <br />
+      <h3>Chats de texto</h3>
       -Não há como saber se você está sendo sarcástico<br />
-      -Use o shitpost para postar seus memes e afins. <br />
-      -Conversas sobre jogos que não sejam Fallout ou que não tenham a ver com o
-      servidor em -geral ficam no off-topic <br />
+      -Use o shitpost para postar seus memes e afins. Qualquer meme (QUALQUER)
+      postado em canais de texto que não sejam o shitpost será excluido e o
+      usuário punido <br />
+      -Conversas sobre jogos que não sejam Fallout ficam no off-topic <br />
       -Não compartilhe conteúdo NSFW. Em lugar nenhum (sim, isso inclui o
       shitpost) <br />
       <h3>Uso do servidor </h3>
-      -Pessoas inativas por muito tempo serão kickadas <br />
+      -Este servidor não se responsabiliza por desinformação oriunda de seus
+      usuários e/ou danos causados pelos mesmos -Pessoas inativas por muito
+      tempo serão kickadas <br />
       -Se tiver alguma ideia relevante ao servidor, mande em sugestões <br />
-      -Reclamação sobre algum membro mande para alguém dastaff <br />
+      -Reclamação sobre algum membro mande para alguém da staff <br />
       -Reclamação sobre a staff mande para o Músico <br />
       -Reclamação sobre o Músico mande para o Zé ou para o Neto <br />
-      Este servidor é uma propriedade privada. Se você não concorda com as
-      regras, está convidado a se retirar. <br />
       <br />
       <Button
         color="green"
