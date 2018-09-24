@@ -31,9 +31,11 @@ class Regras extends React.Component {
             <b>Moderação:</b> <br />
             <span style={{ color: '#1bff80' }}>Vault Overseer</span> – Músico{' '}
             <br />
-            <span style={{ color: '#ffb641' }}>Vault Manager</span> – Neto{' '}
+            <span style={{ color: '#1bff80' }}>Vault Overseer</span> – Neto{' '}
             <br />
-            <span style={{ color: '#2ecfff' }}>Vault Technician</span> – Zé, Ipa{' '}
+            <span style={{ color: '#ffb641' }}>Vault Manager</span> – Henrick{' '}
+            <br />
+            <span style={{ color: '#2ecfff' }}>Vault Technician</span> – Turbo{' '}
             <br />
           </p>
         </div>
@@ -78,7 +80,7 @@ class Regras extends React.Component {
           <br />
           -Reclamação sobre algum membro mande para alguém da staff <br />
           -Reclamação sobre a staff mande para o Músico <br />
-          -Reclamação sobre o Músico mande para o Zé ou para o Neto <br />
+          -Reclamação sobre o Músico mande para o Neto <br />
           <br />
           <Button
             color="green"

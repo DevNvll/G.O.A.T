@@ -66,7 +66,11 @@ const TAGS = [
   "Brotherhood of Steel (Maxson's Pride)",
   'Brotherhood of Steel (Midwest Chapter)',
   'Brotherhood of Steel (Outcasts)',
-  'NoAge'
+  'NoAge',
+  'Credit Check: The Strip',
+  'Credit Check: The Tops',
+  'Credit Check: Gomorrah',
+  'Credit Check: Ultra-Luxe'
 ]
 
 client.on('ready', () => {
@@ -103,10 +107,59 @@ function toggleRole(member, tag) {
   }
 }
 
+async function removeTagsStrip(member) {
+  const GUILD = client.guilds.find('id', SERVER_ID)
+  try {
+    await member.removeRole(
+      GUILD.roles.find('name', 'Credit Check: Gomorrah').id
+    )
+    await member.removeRole(
+      GUILD.roles.find('name', 'Credit Check: The Tops').id
+    )
+    await member.removeRole(
+      GUILD.roles.find('name', 'Credit Check: Ultra-Luxe').id
+    )
+    await member.addRole(GUILD.roles.find('name', 'Credit Check: The Strip').id)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+function genTagsArray(tags) {
+  const GUILD = client.guilds.find('id', SERVER_ID)
+  let tagsArray = []
+  tags.forEach(t => {
+    tagsArray.push(GUILD.roles.find('name', t).id)
+  })
+  return tagsArray
+}
+
 function handleTags(member, tag) {
   const GUILD = client.guilds.find('id', SERVER_ID)
   if (TAGS.includes(tag)) {
     let userTags = member.roles.filterArray(i => TAGS.includes(i.name))
+    if (tag === 'Credit Check: The Strip') {
+      removeTagsStrip(member)
+      return
+    }
+    if (tag.startsWith('Credit Check:')) {
+      if (userTags.some(t => t.name === 'Credit Check: The Strip')) {
+        member
+          .removeRole(GUILD.roles.find('name', 'Credit Check: The Strip').id)
+          .then(() => {
+            member.addRoles(
+              genTagsArray(
+                [
+                  'Credit Check: Gomorrah',
+                  'Credit Check: The Tops',
+                  'Credit Check: Ultra-Luxe'
+                ].filter(t => t !== tag)
+              )
+            )
+          })
+        return
+      }
+    }
     if (tag === 'Sem Especificação') {
       for (let tag of userTags) {
         if (tag.name === '+18' || tag.name === '-18') continue
@@ -115,6 +168,7 @@ function handleTags(member, tag) {
       member.addRole(GUILD.roles.find('name', 'Sem Especificação').id)
       return
     }
+
     if (tag === 'NoAge') {
       if (member.roles.find('name', '-18')) {
         member.removeRole(GUILD.roles.find('name', '-18').id)

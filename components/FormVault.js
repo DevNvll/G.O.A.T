@@ -65,7 +65,11 @@ const TAGS = [
   'Brotherhood of Steel (Mojave Chapter)',
   "Brotherhood of Steel (Maxson's Pride)",
   'Brotherhood of Steel (Midwest Chapter)',
-  'Brotherhood of Steel (Outcasts)'
+  'Brotherhood of Steel (Outcasts)',
+  'Credit Check: The Strip',
+  'Credit Check: The Tops',
+  'Credit Check: Gomorrah',
+  'Credit Check: Ultra-Luxe'
 ]
 
 const TagCategories = {
@@ -129,6 +133,7 @@ export default class TagsForm extends React.Component {
       error: false,
       sent: false,
       tags: [],
+      strip: [],
       loading: true
     }
   }
@@ -137,7 +142,23 @@ export default class TagsForm extends React.Component {
       method: 'GET',
       url: `/userTags/${this.props.userid}`
     }).then(({ data }) => {
-      this.setState({ tags: data.filter(i => TAGS.includes(i)) })
+      console.log(data)
+
+      this.setState({ tags: data.filter(i => TAGS.includes(i)) }, () => {
+        if (data.includes('Credit Check: The Strip')) {
+          this.setState(
+            {
+              tags: [
+                ...this.state.tags,
+                'Credit Check: The Tops',
+                'Credit Check: Gomorrah',
+                'Credit Check: Ultra-Luxe'
+              ].filter(t => t !== 'Credit Check: The Strip')
+            },
+            () => console.log(this.state.tags)
+          )
+        }
+      })
       this.setState({ loading: false })
     })
   }
@@ -147,20 +168,40 @@ export default class TagsForm extends React.Component {
   }
   handleChange = (answ, tag) => {
     if (!this.state.tags.includes(tag.value))
-      this.setState({
-        tags: [
-          ...this.state.tags.filter(i => i !== 'Sem Especificação'),
-          tag.value
-        ]
-      })
+      this.setState(
+        {
+          tags: [
+            ...this.state.tags.filter(i => i !== 'Sem Especificação'),
+            tag.value
+          ]
+        },
+        this.handleStrip
+      )
     else {
-      this.setState({ tags: this.state.tags.filter(i => i !== tag.value) })
+      this.setState(
+        { tags: this.state.tags.filter(i => i !== tag.value) },
+        this.handleStrip
+      )
     }
     axios({
       method: 'POST',
       url: `/handleTags`,
       data: { tag: tag.value, token: getToken() }
     })
+  }
+
+  handleStrip = (prevProps, prevState) => {
+    if (
+      this.state.tags.filter(
+        r => r.startsWith('Credit Check:') && r !== 'Credit Check: The Strip'
+      ).length === 3
+    ) {
+      axios({
+        method: 'POST',
+        url: `/handleTags`,
+        data: { tag: 'Credit Check: The Strip', token: getToken() }
+      })
+    }
   }
 
   handleSemEspec() {
@@ -282,6 +323,39 @@ export default class TagsForm extends React.Component {
                   !this.state.tags.includes('-18')
                 }
                 onChange={this.handleAge.bind(this)}
+              />
+            </Form.Field>
+          </Segment>
+          <Segment
+            style={{ margin: '50px' }}
+            inverted
+            loading={this.state.loading}
+          >
+            <Form.Field>
+              <label style={{ color: '#1bff80' }}>> The Strip</label>
+              <Form.Field
+                control={Checkbox}
+                label="Gostaria de participar do The Tops"
+                value="Credit Check: The Tops"
+                key={0}
+                checked={this.state.tags.includes('Credit Check: The Tops')}
+                onChange={this.handleChange.bind(this)}
+              />
+              <Form.Field
+                control={Checkbox}
+                label="Gostaria de participar da Gomorrah"
+                value="Credit Check: Gomorrah"
+                key={1}
+                checked={this.state.tags.includes('Credit Check: Gomorrah')}
+                onChange={this.handleChange.bind(this)}
+              />
+              <Form.Field
+                control={Checkbox}
+                label="Gostaria de participar do Ultra-Luxe"
+                value="Credit Check: Ultra-Luxe"
+                key={2}
+                checked={this.state.tags.includes('Credit Check: Ultra-Luxe')}
+                onChange={this.handleChange.bind(this)}
               />
             </Form.Field>
           </Segment>

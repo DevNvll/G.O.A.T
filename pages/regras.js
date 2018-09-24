@@ -6,6 +6,8 @@ import ManualRegras from '../components/ManualRegras'
 import ManualTags from '../components/ManualTags'
 import ManualKarma from '../components/ManualKarma'
 import ManualNetwork from '../components/ManualNetwork'
+import ManualPipboy from '../components/ManualPipboy'
+import ManualTheStrip from '../components/ManualTheStrip'
 
 const Stepper = ({ step, next }) => {
   switch (step) {
@@ -17,6 +19,10 @@ const Stepper = ({ step, next }) => {
       return <ManualKarma next={next} />
     case 3:
       return <ManualNetwork next={next} />
+    case 4:
+      return <ManualPipboy next={next} />
+    case 5:
+      return <ManualTheStrip next={next} />
   }
 }
 
@@ -29,7 +35,7 @@ class index2 extends Component {
   }
 
   handleNext() {
-    if (this.state.step === 3) {
+    if (this.state.step === 5) {
       Router.push('/goat')
       localStorage.setItem('regras', 'true')
       return

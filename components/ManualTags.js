@@ -42,7 +42,7 @@ class ManualTags extends React.Component {
         <span style={{ color: '#798a75' }}>Wastelander</span>: Usuário
         recém-chegado no servidor, ao qual está pendente de identificação.
         Possui somente 30% de acesso ao servidor. <br />
-        <span style={{ color: '#ffffff' }}>Lore Master</span>: Mestre da
+        <span style={{ color: '#964fff' }}>Lore Master</span>: Mestre da
         história, em português. Dada para aqueles que possuem conhecimento
         profundo sobre a franquia e tudo que nela representa, além de serem
         capazes de debater e explicar aos demais usuários tudo que nela há.<br />
@@ -51,7 +51,7 @@ class ManualTags extends React.Component {
         reconhecimento de comportamento.<br />
         <span>Tags de facções</span>: Usuários que apoiam determinadas facções e
         defendem as suas missões/ideias.<br />
-        <span>Sem Especificação:</span> Usuários aos quais não apoiam as ideias
+        <span style={{color: '#686868'}}>Sem Especificação:</span> Usuários aos quais não apoiam as ideias
         de nenhuma facção em particular.
         <br />
         <br />
