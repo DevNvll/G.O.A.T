@@ -19,7 +19,6 @@ class Regras extends React.Component {
             />
           </center>
           <Image src="static/musico.png" size="small" floated="left" />
-
           <br />
           <p>
             Olá, e sejam bem-vindos ao discord oficial do canal Vault 130! Aqui
@@ -34,6 +33,8 @@ class Regras extends React.Component {
             <span style={{ color: '#1bff80' }}>Vault Overseer</span> – Neto{' '}
             <br />
             <span style={{ color: '#ffb641' }}>Vault Manager</span> – Henrick{' '}
+            <br />
+            <span style={{ color: '#ffb641' }}>Vault Manager</span> – alex{' '}
             <br />
             <span style={{ color: '#2ecfff' }}>Vault Technician</span> – Turbo{' '}
             <br />
@@ -65,7 +66,8 @@ class Regras extends React.Component {
           -Expulsar usuários do servidor <br />
           -Aplicar punições <br />
           <h3>Chats de texto</h3>
-          -Não há como saber se você está sendo sarcástico<br />
+          -Não há como saber se você está sendo sarcástico
+          <br />
           -Use o shitpost para postar seus memes e afins. Qualquer meme
           (QUALQUER) postado em canais de texto que não sejam o shitpost será
           excluido e o usuário punido <br />

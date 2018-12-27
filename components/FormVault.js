@@ -69,7 +69,8 @@ const TAGS = [
   'Credit Check: The Strip',
   'Credit Check: The Tops',
   'Credit Check: Gomorrah',
-  'Credit Check: Ultra-Luxe'
+  'Credit Check: Ultra-Luxe',
+  'Vault Jukebox'
 ]
 
 const TagCategories = {
@@ -332,29 +333,13 @@ export default class TagsForm extends React.Component {
             loading={this.state.loading}
           >
             <Form.Field>
-              <label style={{ color: '#1bff80' }}>> The Strip</label>
+              <label style={{ color: '#1bff80' }}>> Vault Jukebox</label>
               <Form.Field
                 control={Checkbox}
-                label="Gostaria de participar do The Tops"
-                value="Credit Check: The Tops"
+                label="Receber acesso ao Vault Jukebox"
+                value="Vault Jukebox"
                 key={0}
-                checked={this.state.tags.includes('Credit Check: The Tops')}
-                onChange={this.handleChange.bind(this)}
-              />
-              <Form.Field
-                control={Checkbox}
-                label="Gostaria de participar da Gomorrah"
-                value="Credit Check: Gomorrah"
-                key={1}
-                checked={this.state.tags.includes('Credit Check: Gomorrah')}
-                onChange={this.handleChange.bind(this)}
-              />
-              <Form.Field
-                control={Checkbox}
-                label="Gostaria de participar do Ultra-Luxe"
-                value="Credit Check: Ultra-Luxe"
-                key={2}
-                checked={this.state.tags.includes('Credit Check: Ultra-Luxe')}
+                checked={this.state.tags.includes('Vault Jukebox')}
                 onChange={this.handleChange.bind(this)}
               />
             </Form.Field>

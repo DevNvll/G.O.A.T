@@ -70,7 +70,8 @@ const TAGS = [
   'Credit Check: The Strip',
   'Credit Check: The Tops',
   'Credit Check: Gomorrah',
-  'Credit Check: Ultra-Luxe'
+  'Credit Check: Ultra-Luxe',
+  'Vault Jukebox'
 ]
 
 client.on('ready', () => {
@@ -261,13 +262,13 @@ nextApp.prepare().then(() => {
           301,
           process.env.NOW_URL
             ? 'https://vault130.now.sh/goat?code=' +
-              access_token +
-              '&refresh=' +
-              refresh_token
+                access_token +
+                '&refresh=' +
+                refresh_token
             : 'http://localhost:3000/goat?code=' +
-              access_token +
-              '&refresh=' +
-              refresh_token
+                access_token +
+                '&refresh=' +
+                refresh_token
         )
       })
       .catch(err => {
