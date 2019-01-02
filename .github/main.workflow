@@ -28,7 +28,7 @@ action "deploy" {
 }
 
 action "alias" {
-  needs = ["remove alias", "deploy"]
+  needs = ["deploy", "remove alias"]
   uses = "actions/zeit-now@master"
   args = "alias"
   secrets = [
