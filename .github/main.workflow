@@ -1,6 +1,6 @@
 workflow "Deploy on Now" {
   on = "push"
-  resolves = ["alias"]
+  resolves = ["scale to sfo1"]
 }
 
 action "shutdown old instance" {
@@ -36,8 +36,8 @@ action "alias" {
   ]
 }
 
-action "scale" {
-  needs = ["remove alias", "deploy", "alias"]
+action "scale to sfo1" {
+  needs = ["alias"]
   uses = "actions/zeit-now@master"
   args = "scale vault130.now.sh sfo1 1"
   secrets = [
