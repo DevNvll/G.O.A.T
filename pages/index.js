@@ -18,7 +18,7 @@ class index3 extends Component {
     return (
       <Dimmer active>
         <Loader inverted size="big">
-          Carregando
+          Carregando...
         </Loader>
       </Dimmer>
     )
