@@ -20,9 +20,9 @@ class ManualKarma extends React.Component {
             negativos.
           </p>
           <p>
-            Com três pontuações positivas, você vira Vault Hero. Com mais três
-            pontuações positivas enquanto Vault Hero, você pode ser indicado
-            para participar da moderação do servidor.{' '}
+            Com três pontuações positivas, você vira Herói do Vault. Com mais
+            três pontuações positivas enquanto Herói do Vault, você pode ser
+            indicado para participar da moderação do servidor.{' '}
           </p>
           <p>
             Com três pontuações negativas, você é banido do servidor

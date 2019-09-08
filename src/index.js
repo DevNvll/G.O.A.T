@@ -66,6 +66,8 @@ const TAGS = [
   "Brotherhood of Steel (Maxson's Pride)",
   'Brotherhood of Steel (Midwest Chapter)',
   'Brotherhood of Steel (Outcasts)',
+  'Mojave Chapter',
+  'First Chapter',
   'NoAge',
   'Credit Check: The Strip',
   'Credit Check: The Tops',
@@ -80,8 +82,8 @@ client.on('ready', () => {
 
 function addMembership(member) {
   const GUILD = client.guilds.find('id', SERVER_ID)
-  member.addRole(GUILD.roles.find('name', 'Vault Dweller').id).then(() => {
-    member.removeRole(GUILD.roles.find('name', 'Wastelander').id)
+  member.addRole(GUILD.roles.find('name', 'Habitante do Vault').id).then(() => {
+    member.removeRole(GUILD.roles.find('name', 'Viajante').id)
     member.addRole(GUILD.roles.find('name', 'Vault Renegade [0]').id)
   })
 }
@@ -306,9 +308,7 @@ nextApp.prepare().then(() => {
     if (req.params.userid) {
       axios({
         method: 'GET',
-        url: `https://discordapp.com/api/v6/guilds/${SERVER_ID}/members/${
-          req.params.userid
-        }`,
+        url: `https://discordapp.com/api/v6/guilds/${SERVER_ID}/members/${req.params.userid}`,
         headers: {
           Authorization: 'Bot ' + token
         }
@@ -371,9 +371,7 @@ nextApp.prepare().then(() => {
   app.get('/userRoles/:userid', (req, res) => {
     axios({
       method: 'GET',
-      url: `https://discordapp.com/api/v6/guilds/${SERVER_ID}/members/${
-        req.params.userid
-      }`,
+      url: `https://discordapp.com/api/v6/guilds/${SERVER_ID}/members/${req.params.userid}`,
       headers: {
         Authorization: 'Bot ' + token
       }
@@ -396,7 +394,7 @@ nextApp.prepare().then(() => {
         const member = client.guilds
           .find('id', SERVER_ID)
           .members.find('id', data.id)
-        if (member.roles.find('name', 'Wastelander')) addMembership(member)
+        if (member.roles.find('name', 'Viajante')) addMembership(member)
         handleTags(member, req.body.tag)
         res.send(member)
       })

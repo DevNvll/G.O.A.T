@@ -95,32 +95,29 @@ export default class Index extends React.Component {
     }
     return (
       <Container>
-        {(this.state.loggedin &&
-          this.state.user && (
-            <React.Fragment>
-              <Profile
-                avatar={`https://cdn.discordapp.com/avatars/${
-                  this.state.user.id
-                }/${this.state.user.avatar}.png`}
-                username={
-                  this.state.user.username + '#' + this.state.user.discriminator
-                }
-                onLogout={this.onLogout.bind(this)}
+        {(this.state.loggedin && this.state.user && (
+          <React.Fragment>
+            <Profile
+              avatar={`https://cdn.discordapp.com/avatars/${this.state.user.id}/${this.state.user.avatar}.png`}
+              username={
+                this.state.user.username + '#' + this.state.user.discriminator
+              }
+              onLogout={this.onLogout.bind(this)}
+            />
+            {(this.state.member && (
+              <Form
+                userid={this.state.user.id}
+                pendente={this.state.isPending}
               />
-              {(this.state.member && (
-                <Form
-                  userid={this.state.user.id}
-                  pendente={this.state.isPending}
-                />
-              )) || <h1>Você não é membro do servidor</h1>}
-            </React.Fragment>
-          )) || (
+            )) || <h1>Você não é membro do servidor</h1>}
+          </React.Fragment>
+        )) || (
           <div>
             <center>
               <Image src="/static/goat.png" size="medium" />
               <h1>
-                Olá, caro Vault Dweller! <br /> Seja bem-vindo ao G.O.A.T. do
-                Vault 130.
+                Olá, caro Habitante do Vault! <br /> Seja bem-vindo ao G.O.A.T.
+                do Vault 130.
               </h1>
               <p>
                 Aqui você escolherá as tags de facções que serão aplicadas a
@@ -129,13 +126,17 @@ export default class Index extends React.Component {
               </p>{' '}
               <p>
                 Se identificando, você também garante sua estadia completa no
-                servidor, perdendo a tag de Wastelander e ganhando a de Vault
-                Dweller.
+                servidor, perdendo a tag de Viajante e ganhando então a de
+                Habitante do Vault.
               </p>
               <p>Você pode escolher quem quiser, e mudar sempre que desejar.</p>{' '}
               <p>
-                Lembrando que, é essencial que você escolha somente quem você
-                apoia de verdade, e que não abuse das tags.
+                Lembrando que, é absolutamente ESSENCIAL que você ESCOLHA
+                SOMENTE QUEM VOCÊ APOIA DE VERDADE, e que NÃO ABUSE das tags.
+              </p>
+              <p>
+                O usuário que abusar das tags (escolhendo todas elas, por
+                exemplo) PERDERÁ KARMA SEM AVISO PRÉVIO.
               </p>
               <br />
               <a

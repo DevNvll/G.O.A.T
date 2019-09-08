@@ -21,38 +21,41 @@ class ManualTags extends React.Component {
         </center>
         <h3>Tags de identificação do usuário:</h3>
         <span style={{ color: '#1bff80' }}>
-          <b>Vault Overseer</b>
-        </span>: Administrador do servidor. Cuida das regras, distribui tags aos
+          <b>Supervisor</b>
+        </span>
+        : Administrador do servidor. Cuida das regras, distribui tags aos
         usuários e os policia, além de cuidar dos canais de texto e de voz.{' '}
         <br />
-        <span style={{ color: '#ffb641' }}>Vault Manager</span>: Moderador do
+        <span style={{ color: '#ffb641' }}>Gerente</span>: Moderador do
         servidor. Distribui tags aos usuários, os policia e cuida dos canais de
         texto e de voz, ajudando também na administração geral do servidor.{' '}
         <br />
-        <span style={{ color: '#2ecfff' }}>Vault Technician</span>:
-        Sub-moderador do servidor. Cuida dos canais de texto e de voz. <br />
-        <span style={{ color: '#e74c3c' }}>Vault Podcaster</span>:
-        Streamer/YouTuber do servidor. Basta informar o seu canal do
-        YouTube/Twitch a alguém da staff para garantir a tag. Garante acesso ao
-        canal Lives e Podcasts do servidor. <br />
-        <span style={{ color: '#ffe84e' }}>Vault Entrepreneur</span>: Doador do
+        <span style={{ color: '#2ecfff' }}>Técnico</span>: Sub-moderador do
+        servidor. Cuida dos canais de texto e de voz. <br />
+        <span style={{ color: '#ffe84e' }}>Empresário do Vault</span>: Doador do
         canal Vault 130 (Via Apoia.se, Paypal, Streamlabs ou cryptos). <br />
-        <span style={{ color: '#2143f7' }}>Vault Dweller</span>: Usuário comum
-        do servidor. <br />
-        <span style={{ color: '#798a75' }}>Wastelander</span>: Usuário
+        <span style={{ color: '#2143f7' }}>Habitante do Vault</span>: Usuário
+        comum do servidor. <br />
+        <span style={{ color: '#798a75' }}>Viajante</span>: Usuário
         recém-chegado no servidor, ao qual está pendente de identificação.
         Possui somente 30% de acesso ao servidor. <br />
-        <span style={{ color: '#964fff' }}>Lore Master</span>: Mestre da
+        <span style={{ color: '#964fff' }}>Mestre da Lore</span>: Mestre da
         história, em português. Dada para aqueles que possuem conhecimento
         profundo sobre a franquia e tudo que nela representa, além de serem
-        capazes de debater e explicar aos demais usuários tudo que nela há.<br />
-        <span style={{ color: '#5e08cc' }}>Vault Hero</span>: Membro exemplar do
-        servidor. Dada para aqueles que conseguem alcançar três tags de
-        reconhecimento de comportamento.<br />
+        capazes de debater e explicar aos demais usuários tudo que nela há.
+        <br />
+        <span style={{ color: '#5e08cc' }}>Herói do Vault</span>: Membro
+        exemplar do servidor. Dada para aqueles que conseguem alcançar três tags
+        de reconhecimento de comportamento.
+        <br />
+        <span style={{ color: '#5e08cc' }}>Ancião do Vault</span>: Usuário
+        participativo que passou mais de um ano (365 dias) no servidor.
+        <br />
         <span>Tags de facções</span>: Usuários que apoiam determinadas facções e
-        defendem as suas missões/ideias.<br />
-        <span style={{color: '#686868'}}>Sem Especificação:</span> Usuários aos quais não apoiam as ideias
-        de nenhuma facção em particular.
+        defendem as suas missões/ideias.
+        <br />
+        <span style={{ color: '#686868' }}>Sem Especificação:</span> Usuários
+        aos quais não apoiam as ideias de nenhuma facção em particular.
         <br />
         <br />
         <Button

@@ -28,16 +28,12 @@ class Regras extends React.Component {
           </p>
           <p>
             <b>Moderação:</b> <br />
-            <span style={{ color: '#1bff80' }}>Vault Overseer</span> – Músico{' '}
+            <span style={{ color: '#1bff80' }}>Supervisor</span> – Músico <br />
+            <span style={{ color: '#1bff80' }}>Supervisor</span> – Neto <br />
+            <span style={{ color: '#ffb641' }}>Supervisor</span> – Henrick{' '}
             <br />
-            <span style={{ color: '#1bff80' }}>Vault Overseer</span> – Neto{' '}
-            <br />
-            <span style={{ color: '#ffb641' }}>Vault Manager</span> – Henrick{' '}
-            <br />
-            <span style={{ color: '#ffb641' }}>Vault Manager</span> – alex{' '}
-            <br />
-            <span style={{ color: '#2ecfff' }}>Vault Technician</span> – Turbo{' '}
-            <br />
+            <span style={{ color: '#ffb641' }}>Gerente</span> – Turbo <br />
+            <span style={{ color: '#2ecfff' }}>Técnico</span> – Drede <br />
           </p>
         </div>
         <div style={{ clear: 'both', paddingBottom: '20px' }}>

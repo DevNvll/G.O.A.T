@@ -13,66 +13,99 @@ class ManualNetwork extends React.Component {
           <Image src="static/network.png" size="large" />
         </center>
         <h1>
-          <center>[Canais de texto disponíveis]</center>
+          <center>[No Canal de Voz]</center>
+        </h1>
+        <span style={{ color: 'grey' }}>#chat-de-texto:</span> Para quem não tem
+        microfone ou não pode usá-lo no momento, falem por este canal de texto
+        para se comunicar com quem está no canal de voz. <br />
+        <h1>
+          <center>[No Canal Fallout]</center>
         </h1>
         <span style={{ color: 'grey' }}>#fallout:</span> Sala de conversação{' '}
         <br />
         <br />
-        <span style={{ color: 'grey' }}>#anúncios:</span> Anuncios feitos pela
-        staff em relação ao servidor. <br />
+        <span style={{ color: 'grey' }}>#mods:</span> Sala de conversação sobre
+        mods de Fallout em geral.
         <br />
-        <span style={{ color: 'grey' }}>#divulgação:</span> Divulgação de
-        canais/vídeos de Fallout. Para ter seu vídeo divulgado, fale com Músico.{' '}
-        <br />
-        <br />
-        <span style={{ color: 'grey' }}>#debate-lore:</span> Debate entre dois
-        ou mais usuários sobre ideias diversas. <br />
-        <br />
-        <span style={{ color: 'grey' }}>#sugestões:</span> Dedicado para os
-        demais usuários do servidor sugerirem coisas para melhorá-lo. <br />
-        <br />
-        <span style={{ color: 'grey' }}>#a-porta-corrediça:</span> Canal
-        destinado à avisar os demais usuários da chegada de novos usuários ao
-        servidor, ou então de suas saídas. <br />
-        <br />
-        <span style={{ color: 'grey' }}>#robco-cybernetics:</span> Lugar para
-        uso de comandos de bots. Qualquer comando de bot fora desse canal de
-        texto é proibido. <br />
         <br />
         <span style={{ color: 'grey' }}>#mods-recomendados:</span> Recomendações
         de mods dos demais usuários. Vale somente para jogos de Fallout.
         Qualquer outra recomendação de mod para outros jogos, coloque no
-        #off-topic. <br />
+        #off-topic.
+        <br />
         <br />
         <span style={{ color: 'grey' }}>#suporte-técnico:</span> Canal para os
         demais usuários se ajudarem com bugs e troubleshootings sobre o jogo.{' '}
         <br />
         <br />
-        <span style={{ color: 'grey' }}>#artes-do-vault:</span> Todo conteúdo
-        produzido pelos fãs de Fallout e usuários do servidor. #off-topic:
-        Conversação sobre coisas que não tem a ver com Fallout. <br />
+        <span style={{ color: 'grey' }}>#artes-fallout:</span> Todo o conteúdo
+        de Fallout produzido pelos usuários do Vault. Screenshots, artworks,
+        cosplays, vídeos e mais. <br />
         <br />
-        <span style={{ color: 'grey' }}>#mods:</span> Sala de conversação sobre
-        mods de Fallout em geral. #pérolas: Coisas engraçadas/ilógicas ditas
-        pelos usuários do servidor ou então em algum lugar distinto sobre a lore
-        do jogo. <br />
+        <br />
+        <h1>
+          <center>[No Canal Geral]</center>
+        </h1>
+        <span style={{ color: 'grey' }}>#off-topic:</span> Conversação sobre
+        coisas que não tem a ver com Fallout.
+        <br />
         <br />
         <span style={{ color: 'grey' }}>#shitpost:</span> Literalmente tudo que
-        não tem a ver com o servidor em geral (menos NSFW, poxa). <br />
+        não tem a ver com o servidor em geral (menos NSFW, poxa).
         <br />
-        <span style={{ color: 'grey' }}>#irl:</span> Um canal de texto para os
-        usuários falarem de coisas pessoais de seu dia-a-dia.<br />
         <br />
-        <span style={{ color: 'grey' }}>#evergreen-mills:</span> Canal reservado
-        para os trolls do servidor.<br />
+        <span style={{ color: 'grey' }}>#gatoposting:</span> Sala para postagem
+        de fotos e memes sobre gatos. Cachorro/Humano em Fantasia de
+        Gato/Mulheres-Gato de Anime = Ban.
+        <br />
+        <br />
+        <span style={{ color: 'grey' }}>#artes-geral:</span> Todo o conteúdo de
+        games em geral produzido pelos usuários do Vault. Screenshots, artworks,
+        cosplays, vídeos e mais.
+        <br />
+        <br />
+        <h1>
+          <center>[No Canal Servidor]</center>
+        </h1>
+        <span style={{ color: 'grey' }}>#anúncios:</span> Anúncios feitos pela
+        staff em relação ao servidor.
+        <br />
+        <br />
+        <span style={{ color: 'grey' }}>#divulgação:</span> Divulgação de
+        canais/vídeos de Fallout. Para ter seu vídeo divulgado, fale com Músico.
+        <br />
+        <br />
+        <span style={{ color: 'grey' }}>#sugestões:</span> Dedicado para os
+        demais usuários do servidor sugerirem coisas para melhorá-lo.
+        <br />
+        <br />
+        <span style={{ color: 'grey' }}>#a-porta-corrediça:</span> Canal
+        destinado à avisar os demais usuários da chegada de novos usuários ao
+        servidor, ou então de suas saídas.
+        <br />
+        <br />
+        <span style={{ color: 'grey' }}>#robco-cybernetics:</span> Lugar para
+        uso de comandos de bots. Qualquer comando de bot fora desse canal de
+        texto é proibido.
+        <br />
+        <br />
+        <h1>
+          <center>[No Canal Jukebox]</center>
+        </h1>
+        <span style={{ color: 'grey' }}>#jukebox:</span> Sala para digitar
+        comandos do bot da Jukebox.
+        <br />
+        <br />
         <h1>
           <center>[Canais de voz disponíveis]</center>
         </h1>
-        <span>L.A. Boneyard</span>
+        <span>The Strip (disponível para Viajantes)</span>
         <br />
-        <span>Navarro</span>
+        <span>Navarro (disponível somente para Habitantes do Vault)</span>
         <br />
-        <span>The Strip</span>
+        <span>
+          Angel's Boneyard (disponível somente para Habitantes do Vault)
+        </span>
         <br />
         <br />
         <h1>
@@ -81,7 +114,8 @@ class ManualNetwork extends React.Component {
         <b>Comandos do @Pip-boy 3000 (Mee6) </b>
         <br />
         <span style={{ color: 'grey' }}>"!regras"</span> Mostra um pequeno texto
-        introdutório, junto com as principais regras do servidor.<br />
+        introdutório, junto com as principais regras do servidor.
+        <br />
         <span style={{ color: 'grey' }}>"!rank"</span> Mostra o seu XP, nível e
         posição na leaderboard do servidor. <br />
         <span style={{ color: 'grey' }}>"!levels"</span> Mostra um link para a

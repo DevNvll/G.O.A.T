@@ -2,7 +2,7 @@ import { Image, Button, Form, Checkbox } from 'semantic-ui-react'
 
 class ManualTheStrip extends React.Component {
   componentDidMount() {
-    document.title = 'Vault 130 - The Strip'
+    document.title = 'Vault 130 - Vault Jukebox'
   }
 
   render() {
